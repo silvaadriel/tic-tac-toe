@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const SymbolSquare = styled.View`
   background-color: #fff;
   border-color: #d6d7da;
-  border-width: 1;
+  border-width: 1px;
   width: 100px;
   height: 100px;
 `;

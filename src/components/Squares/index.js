@@ -1,38 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
+
+import { Container, Symbol, SymbolSquare } from './styles';
 
 export function Squares({ symbols, onPress }) {
   return (
-    <View style={styles.square}>
+    <Container>
       {symbols.map((symbol, index) => (
         <TouchableWithoutFeedback onPress={() => onPress(index)} key={index}>
-          <View style={styles.symbolSquare}>
-            <Text style={styles.symbol}>{symbol.value}</Text>
-          </View>
+          <SymbolSquare>
+            <Symbol>{symbol.value}</Symbol>
+          </SymbolSquare>
         </TouchableWithoutFeedback>
       ))}
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  square: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    height: 300,
-    width: 300
-  },
-  symbolSquare: {
-    height: 100,
-    width: 100,
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#d6d7da'
-  },
-  symbol: {
-    textAlign: 'center',
-    marginTop: 20,
-    fontSize: 48
-  }
-});

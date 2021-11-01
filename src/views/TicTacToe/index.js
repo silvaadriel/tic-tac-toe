@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Text, Button } from 'react-native';
 
 import { Players } from '../../components/Players';
 import { Squares } from '../../components/Squares';
 import { WinnerModal } from '../../components/WinnerModal';
+
+import { Container } from './styles';
 
 const INITIAL_STATE = [
   { value: '' },
@@ -96,7 +98,7 @@ export function TicTacToe() {
   };
 
   return (
-    <View style={styles.container}>
+    <Container>
       <Text>Tic-Tac-Toe</Text>
 
       <Squares symbols={symbols} onPress={handleOnPressSquare} />
@@ -106,15 +108,6 @@ export function TicTacToe() {
       <Button title='Restart' color='#777' onPress={handleOnPressRestartButton} />
 
       <WinnerModal showModal={hasWinner} winner={winner} onClose={handleCloseModal} />
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'space-around'
-  }
-});

@@ -1,32 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+
+import { Container, Symbol } from './styles';
 
 export function Players({ whoPlays }) {
+  const getSymbolColor = (symbol) => (whoPlays === symbol ? 'green' : '');
+
   return (
-    <View style={styles.players}>
+    <Container>
       <View>
-        <Text style={[styles.symbol, whoPlays === 'X' ? styles.symbolGreen : '']}>X</Text>
+        <Symbol color={getSymbolColor('X')}>X</Symbol>
       </View>
       <View>
-        <Text style={[styles.symbol, whoPlays === 'O' ? styles.symbolGreen : '']}>O</Text>
+        <Symbol color={getSymbolColor('O')}>O</Symbol>
       </View>
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  players: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
-  symbol: {
-    textAlign: 'center',
-    marginTop: 20,
-    fontSize: 48
-  },
-  symbolGreen: {
-    color: 'green'
-  }
-});

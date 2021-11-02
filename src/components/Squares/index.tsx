@@ -3,7 +3,16 @@ import { TouchableWithoutFeedback } from 'react-native';
 
 import { Container, Symbol, SymbolSquare } from './styles';
 
-export function Squares({ symbols, onPress }) {
+export type Symbol = {
+  value: string;
+};
+
+interface Props {
+  onPress: (index: number) => void;
+  symbols: Symbol[];
+}
+
+export function Squares({ symbols, onPress }: Props) {
   return (
     <Container>
       {symbols.map((symbol, index) => (

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Text, Button } from 'react-native';
 
 import { Players } from '../../components/Players';
-import { Squares } from '../../components/Squares';
+import { Squares, Symbol } from '../../components/Squares';
 import { WinnerModal } from '../../components/WinnerModal';
 
 import { Container } from './styles';
 
-const INITIAL_STATE = [
+const INITIAL_STATE: Symbol[] = [
   { value: '' },
   { value: '' },
   { value: '' },
